@@ -40,10 +40,33 @@ Public Class detail
         dt.Columns.Add("content")
         dt.Columns.Add("amount")
         dt.Columns.Add("f_date")
+        dt.Columns.Add("mail_um")
 
-        dt.Rows.Add("2026/07/10", "文具一式", "330", "2026/07/15")
-        dt.Rows.Add("2026/07/07", "健康診断費用", "3,500", "2026/07/15")
+        If Txt_syain_cd.Text = "024" Then
+            dt.Rows.Add("2026/07/10", "文具一式", "330", "2026/07/15", "")
+            dt.Rows.Add("2026/07/07", "健康診断費用", "3,500", "2026/07/15", "")
+            dt.Rows.Add("2026/07/03", "会議費用", "2,000", "2026/07/15", "")
+            dt.Rows.Add("2026/07/02", "昼食代", "500", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "昼食代", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "昼食代", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "昼食代", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "昼食代", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "昼食代", "1,000", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
+        Else
+            dt.Rows.Add("2026/07/10", "文具一式", "330", "2026/07/15")
+            dt.Rows.Add("2026/07/03", "会議費用", "2,000", "2026/07/15")
+            dt.Rows.Add("2026/07/02", "昼食代", "500", "2026/07/15", "済")
+            dt.Rows.Add("2026/07/01", "交通費", "1,000", "2026/07/15", "済")
 
+        End If
 
         ViewState("DT") = dt
 
@@ -61,8 +84,13 @@ Public Class detail
         Dim sday As Date
         Dim fday As Date
 
-        sday = Txt_sday.Text
-        fday = Txt_fday.Text
+        If Txt_sday.Text <> "" Then
+            sday = Txt_sday.Text
+        End If
+        If Txt_fday.Text <> "" Then
+            fday = Txt_fday.Text
+        End If
+
 
         Dim dt As DataTable =
             CType(ViewState("DT"), DataTable)
@@ -72,7 +100,7 @@ Public Class detail
         dr("s_date") = Format(sday, "yyyy/MM/dd")
         dr("content") = Txt_content.Text
         dr("amount") = Val(Replace(Txt_amount.Text, ",", "")).ToString("#,##0")
-        dr("f_date") = Format(fday, "yyyy/MM/dd")
+        dr("f_date") = IIf(Txt_fday.Text = "", "", Format(fday, "yyyy/MM/dd"))
 
         dt.Rows.InsertAt(dr, 0)
 

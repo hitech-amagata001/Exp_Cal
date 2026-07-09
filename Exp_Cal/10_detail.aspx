@@ -35,8 +35,7 @@
             <asp:Button ID="But_Add" runat="server" Height="33px" Text="登録" Width="60px" BackColor="#009900" ForeColor="White" style="margin-left:50px;" TabIndex="6" /> 
         </div>
         <br />
-        <br />
-         <div style="overflow-y: scroll; height: 400px; Width: 670px; margin-left: 0px;">
+         <div style="overflow-y: scroll; height: 400px; Width: 665px; margin-left: 0px;">
             <table>
                 <tr>
                     <td align="left" valign="middle" class="auto-style1" >
@@ -68,6 +67,10 @@
                             </asp:BoundField>
                             <asp:BoundField DataField="f_date" HeaderText="振込日" > 
                                 <ItemStyle Width="100px"/>
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="mail_um" HeaderText="メール" > 
+                                <ItemStyle Width="70px"/>
                                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                             </asp:BoundField>
                             <asp:TemplateField HeaderText="削除">
