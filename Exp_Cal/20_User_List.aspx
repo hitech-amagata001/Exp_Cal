@@ -17,7 +17,7 @@
             <asp:TextBox ID="Txt_Syain_name" runat="server" Width="140px" Height="20px" Font-Bold="True " style="margin-left: 5px;" TabIndex="1" ForeColor="#0066FF" ReadOnly="True" ></asp:TextBox>
         </div>
         <br />
-         <div style="overflow-y: scroll; height: 400px; Width: 660px; margin-left: 0px;">
+         <div style="overflow-y: scroll; height: 400px; Width: 670px; margin-left: 0px;">
             <table>
                 <tr>
                     <td align="left" valign="middle" class="auto-style1" >

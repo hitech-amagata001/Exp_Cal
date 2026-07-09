@@ -36,7 +36,7 @@
         </div>
         <br />
         <br />
-         <div style="overflow-y: scroll; height: 400px; Width: 660px; margin-left: 0px;">
+         <div style="overflow-y: scroll; height: 400px; Width: 670px; margin-left: 0px;">
             <table>
                 <tr>
                     <td align="left" valign="middle" class="auto-style1" >
