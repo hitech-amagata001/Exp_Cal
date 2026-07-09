@@ -95,4 +95,9 @@ Public Class Main
         )
 
     End Sub
+
+    'ユーザ画面表示
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Response.Redirect("20_User_List.aspx")
+    End Sub
 End Class

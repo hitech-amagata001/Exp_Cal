@@ -85,6 +85,7 @@
                 <asp:Label ID="Label2" runat="server" Text="　　　　"></asp:Label>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
                 <asp:Button ID="Button5" runat="server" Height="33px" Text="CSV取込" Width="102px" BackColor="#009900" ForeColor="White" style="margin-left:100px;" /> 
+                <asp:Button ID="Button2" runat="server" Height="33px" Text="ユーザ用" Width="102px" BackColor="#009900" ForeColor="White" style="margin-left:100px;" /> 
             </p>
         </div>
         
