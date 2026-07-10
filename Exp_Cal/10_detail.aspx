@@ -28,18 +28,18 @@
             <asp:Label ID="Label6" runat="server" Font-Bold="True" ForeColor="Black" Text="金　額" style="margin-left:150px;"　></asp:Label>
             <asp:Label ID="Label7" runat="server" Font-Bold="True" ForeColor="Black" Text="振込日" style="margin-left:50px;"　></asp:Label>
             <br /> 
-            <asp:TextBox ID="Txt_sday" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 0px;" TabIndex="2" ></asp:TextBox>
+            <asp:TextBox ID="Txt_sday" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 5px;" TabIndex="2" ></asp:TextBox>
             <asp:TextBox ID="Txt_content" runat="server" Width="270px" Height="20px" Font-Bold="True " style="margin-left:0px;" TabIndex="3" ></asp:TextBox>
             <asp:TextBox ID="Txt_amount" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 0px; text-align:right;" TabIndex="4"></asp:TextBox>
             <asp:TextBox ID="Txt_fday" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 0px;" TabIndex="5" ></asp:TextBox>
             <asp:Button ID="But_Add" runat="server" Height="33px" Text="登録" Width="60px" BackColor="#009900" ForeColor="White" style="margin-left:50px;" TabIndex="6" /> 
         </div>
         <br />
-         <div style="overflow-y: scroll; height: 400px; Width: 665px; margin-left: 0px;">
+         <div style="overflow-y: scroll; height: 400px; Width: 750px; margin-left: 0px;">
             <table>
                 <tr>
                     <td align="left" valign="middle" class="auto-style1" >
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  Width="640px" OnRowDeleting="GridView1_RowDeleting" >
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  Width="725px" OnRowDeleting="GridView1_RowDeleting" >
                         <AlternatingRowStyle BackColor="White" />  
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -58,7 +58,7 @@
                                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                             </asp:BoundField>
                             <asp:BoundField DataField="content" HeaderText="内　容" > 
-                                <ItemStyle Width="300px"/>
+                                <ItemStyle Width="275px"/>
                                 <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" />
                             </asp:BoundField>
                             <asp:BoundField DataField="amount" HeaderText="金　額" > 
