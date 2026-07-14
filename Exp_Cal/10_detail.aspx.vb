@@ -83,6 +83,8 @@ Public Class detail
 
     '登録ボタン
     Protected Sub But_Add_Click(sender As Object, e As EventArgs) Handles But_Add.Click
+        TxtMSG.Text = ""
+
         Dim sday As Date
         Dim fday As Date
 
@@ -111,6 +113,8 @@ Public Class detail
         GridView1.DataSource = dt
         GridView1.DataBind()
 
+        Call cls1()
+
     End Sub
 
     '削除
@@ -137,8 +141,6 @@ Public Class detail
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
         TxtMSG.Text = ""
 
-        'Mnt_low = GridView1.SelectedIndex
-
         Dim dt As DateTime
 
         If DateTime.TryParse(GridView1.SelectedRow.Cells(1).Text, dt) Then
@@ -154,6 +156,9 @@ Public Class detail
 
     '編集ボタン
     Protected Sub But_Mnt_Click(sender As Object, e As EventArgs) Handles But_Mnt.Click
+        TxtMSG.Text = ""
+
+
         Dim rowIndex As Integer = GridView1.SelectedIndex
 
         Dim sday As Date
@@ -181,5 +186,25 @@ Public Class detail
         GridView1.DataBind()
 
         Session("dt") = dt
+
+        Call cls2()
+
+    End Sub
+
+    '登録情報クリア
+    Private Sub cls1()
+        Txt_sday.Text = ""
+        Txt_content.Text = ""
+        Txt_amount.Text = ""
+        Txt_fday.Text = ""
+    End Sub
+
+    '編集情報クリア
+    Private Sub cls2()
+        Txt_sdayM.Text = ""
+        Txt_contentM.Text = ""
+        Txt_amountM.Text = ""
+        Txt_fdayM.Text = ""
+
     End Sub
 End Class
