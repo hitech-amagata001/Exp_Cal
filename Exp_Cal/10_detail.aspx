@@ -13,7 +13,7 @@
             <asp:TextBox ID="TextBox1" style="text-align:center; margin-left: 0px;" runat="server" BackColor="#3333CC" Font-Bold="True" Font-Size="XX-Large" ForeColor="White" Height="36px" ReadOnly="True" Width="276px" >経費一覧</asp:TextBox>
             <br />
             <br />
-            <asp:TextBox ID="TxtMSG" runat="server" ForeColor="Red" Height="21px" ReadOnly="True" style="margin-bottom: 0px" TextMode="MultiLine" Width="620px"></asp:TextBox>
+            <asp:TextBox ID="TxtMSG" runat="server" ForeColor="Red" Height="21px" ReadOnly="True" style="margin-bottom: 0px" TextMode="MultiLine" Width="625px"></asp:TextBox>
             <br />
             <br /> 
             <asp:Label ID="Label2" runat="server" Font-Bold="True" ForeColor="Black" Text="社員番号：" style="margin-left:5px;"　></asp:Label>
@@ -23,23 +23,24 @@
         </div>
         <br />
         <div>
-            <asp:Label ID="Label3" runat="server" Font-Bold="True" ForeColor="Black" Text="使用日" style="margin-left:25px;"　></asp:Label>
+            <asp:Label ID="Label3" runat="server" Font-Bold="True" ForeColor="Black" Text="使用日" style="margin-left:80px;"　></asp:Label>
             <asp:Label ID="Label5" runat="server" Font-Bold="True" ForeColor="Black" Text="内　容" style="margin-left:140px;"　></asp:Label>
             <asp:Label ID="Label6" runat="server" Font-Bold="True" ForeColor="Black" Text="金　額" style="margin-left:150px;"　></asp:Label>
             <asp:Label ID="Label7" runat="server" Font-Bold="True" ForeColor="Black" Text="振込日" style="margin-left:50px;"　></asp:Label>
-            <br /> 
-            <asp:TextBox ID="Txt_sday" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 5px;" TabIndex="2" ></asp:TextBox>
+            <br />
+            <asp:Label ID="Label4" runat="server" Font-Bold="True" ForeColor="Red" Text="登 録" style="margin-left:10px;"　></asp:Label>
+            <asp:TextBox ID="Txt_sday" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 15px;" TabIndex="2" ></asp:TextBox>
             <asp:TextBox ID="Txt_content" runat="server" Width="270px" Height="20px" Font-Bold="True " style="margin-left:0px;" TabIndex="3" ></asp:TextBox>
             <asp:TextBox ID="Txt_amount" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 0px; text-align:right;" TabIndex="4"></asp:TextBox>
             <asp:TextBox ID="Txt_fday" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 0px;" TabIndex="5" ></asp:TextBox>
             <asp:Button ID="But_Add" runat="server" Height="33px" Text="登録" Width="60px" BackColor="#009900" ForeColor="White" style="margin-left:50px;" TabIndex="6" /> 
         </div>
         <br />
-         <div style="overflow-y: scroll; height: 400px; Width: 750px; margin-left: 0px;">
+         <div style="overflow-y: scroll; height: 400px; Width: 810px; margin-left: 0px;">
             <table>
                 <tr>
                     <td align="left" valign="middle" class="auto-style1" >
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  Width="725px" OnRowDeleting="GridView1_RowDeleting" >
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  Width="780px" OnRowDeleting="GridView1_RowDeleting" >
                         <AlternatingRowStyle BackColor="White" />  
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -53,6 +54,10 @@
                         <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     
                         <Columns>
+                            <asp:CommandField ShowSelectButton="True">
+                                <ItemStyle Width="50px" />
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:CommandField>
                             <asp:BoundField DataField="s_date" HeaderText="使用日" > 
                                 <ItemStyle Width="100px"/>
                                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -98,6 +103,14 @@
                 </tr>
             </table>
         </div>
+        <br />
+            <asp:Label ID="Label8" runat="server" Font-Bold="True" ForeColor="Red" Text="編 集" style="margin-left:10px;"　></asp:Label>
+            <asp:TextBox ID="Txt_sdayM" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 10px;" TabIndex="2" ></asp:TextBox>
+            <asp:TextBox ID="Txt_contentM" runat="server" Width="270px" Height="20px" Font-Bold="True " style="margin-left:0px;" TabIndex="3" ></asp:TextBox>
+            <asp:TextBox ID="Txt_amountM" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 0px; text-align:right;" TabIndex="4"></asp:TextBox>
+            <asp:TextBox ID="Txt_fdayM" runat="server" Width="95px" Height="20px" Font-Bold="True " style="margin-left: 0px;" TabIndex="5" ></asp:TextBox>
+            <asp:Button ID="But_Mnt" runat="server" Height="33px" Text="編集" Width="60px" BackColor="#009900" ForeColor="White" style="margin-left:50px;" TabIndex="6" /> 
+        <br />
         <br />
         <asp:Button ID="But_Mail" runat="server" Height="33px" Text="メール送信" Width="99px" BackColor="#009900" ForeColor="White" style="margin-left:200px;" TabIndex="7" /> 
         <asp:Button ID="But_End" runat="server" Height="33px" Text="戻る" Width="67px" BackColor="#009900" ForeColor="White" style="margin-left:250px;" /> 

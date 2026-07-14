@@ -9,7 +9,7 @@ Imports Microsoft.VisualBasic.FileIO
 
 Public Class detail
     Inherits System.Web.UI.Page
-
+    'Dim Mnt_low As Integer = 0
     'フォームロード
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -25,6 +25,8 @@ Public Class detail
 
             Txt_sday.Attributes("type") = "date"
             Txt_fday.Attributes("type") = "date"
+            Txt_sdayM.Attributes("type") = "date"
+            Txt_fdayM.Attributes("type") = "date"
 
             BindGridView()
 
@@ -129,5 +131,55 @@ Public Class detail
         TxtMSG.ForeColor = System.Drawing.Color.Blue
         TxtMSG.Text = "削除しました。"
         TxtMSG.Focus()
+    End Sub
+
+    '選択
+    Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
+        TxtMSG.Text = ""
+
+        'Mnt_low = GridView1.SelectedIndex
+
+        Dim dt As DateTime
+
+        If DateTime.TryParse(GridView1.SelectedRow.Cells(1).Text, dt) Then
+            Txt_sdayM.Text = dt.ToString("yyyy-MM-dd")
+        End If
+        Txt_contentM.Text = GridView1.SelectedRow.Cells(2).Text
+        Txt_amountM.Text = Replace(GridView1.SelectedRow.Cells(3).Text, ",", "")
+        If DateTime.TryParse(GridView1.SelectedRow.Cells(4).Text, dt) Then
+            Txt_fdayM.Text = dt.ToString("yyyy-MM-dd")
+        End If
+
+    End Sub
+
+    '編集ボタン
+    Protected Sub But_Mnt_Click(sender As Object, e As EventArgs) Handles But_Mnt.Click
+        Dim rowIndex As Integer = GridView1.SelectedIndex
+
+        Dim sday As Date
+        Dim fday As Date
+
+        If Txt_sdayM.Text <> "" Then
+            sday = Txt_sdayM.Text
+        End If
+        If Txt_fdayM.Text <> "" Then
+            fday = Txt_fdayM.Text
+        End If
+
+
+        Dim dt As DataTable =
+            CType(ViewState("DT"), DataTable)
+
+        Dim dr As DataRow = dt.NewRow()
+
+        dt.Rows(rowIndex)("s_date") = Format(sday, "yyyy/MM/dd")
+        dt.Rows(rowIndex)("content") = Txt_contentM.Text
+        dt.Rows(rowIndex)("amount") = Val(Replace(Txt_amountM.Text, ",", "")).ToString("#,##0")
+        dt.Rows(rowIndex)("f_date") = IIf(Txt_fdayM.Text = "", "", Format(fday, "yyyy/MM/dd"))
+
+        GridView1.DataSource = dt
+        GridView1.DataBind()
+
+        Session("dt") = dt
     End Sub
 End Class

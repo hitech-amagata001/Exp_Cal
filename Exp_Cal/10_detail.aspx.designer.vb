@@ -113,6 +113,15 @@ Partial Public Class detail
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Label4 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Txt_sday コントロール。
     '''</summary>
     '''<remarks>
@@ -165,6 +174,60 @@ Partial Public Class detail
     '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Label8 コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Txt_sdayM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Txt_sdayM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Txt_contentM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Txt_contentM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Txt_amountM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Txt_amountM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Txt_fdayM コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents Txt_fdayM As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''But_Mnt コントロール。
+    '''</summary>
+    '''<remarks>
+    '''自動生成されたフィールド。
+    '''変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+    '''</remarks>
+    Protected WithEvents But_Mnt As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''But_Mail コントロール。
